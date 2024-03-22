@@ -1,0 +1,61 @@
+{
+    "name": "users",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_9kyglbeo6f",
+    "y": 50,
+    "properties": {
+        "name": {
+            "name": "name",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_ywg6xfa8hr",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "email": {
+            "name": "email",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_df5vduble9",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "phone_no": {
+            "name": "phone_no",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_j8t6c5wgxp",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        }
+    },
+    "required": [
+        "name",
+        "email",
+        "phone_no"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 242,
+    "userList": {
+        "SSD_SERVICE_ID_sd_71EcxVPTkPTzMzQG": [
+            "sd_BNea4gaCcNVLpIMr",
+            "sd_TnKkt2J3roWAxHrk"
+        ]
+    }
+}

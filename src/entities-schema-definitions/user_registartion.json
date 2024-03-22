@@ -1,0 +1,9 @@
+{
+    "_DM_8j2rxy371": {
+        "id": "_DM_8j2rxy371",
+        "name": "user_registartion",
+        "dbType": "dbModel",
+        "dbConfigId": "sd_EQ0uxl70E3kjCZ8g",
+        "dbName": "postgres"
+    }
+}

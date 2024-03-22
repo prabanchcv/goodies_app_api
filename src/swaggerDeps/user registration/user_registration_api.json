@@ -1,0 +1,29 @@
+{
+    "/user": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "users",
+                    "required": true,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "users": {
+                                "$ref": "#/definitions/user_validation ~ users"
+                            }
+                        }
+                    }
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "user_registration_api"
+            ]
+        }
+    }
+}
