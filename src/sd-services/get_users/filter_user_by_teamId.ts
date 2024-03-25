@@ -9,7 +9,7 @@ import { TracerService } from '../../services/TracerService'; //_splitter_
 import log from '../../utils/Logger'; //_splitter_
 import { DmUtils } from '../../utils/ndefault-datamodel/find/dmUtils'; //_splitter_
 //append_imports_end
-export class get_users_api {
+export class filter_user_by_teamId {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -25,7 +25,7 @@ export class get_users_api {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'get_users_api';
+    this.serviceName = 'filter_user_by_teamId';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -40,7 +40,7 @@ export class get_users_api {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new get_users_api(
+      instance = new filter_user_by_teamId(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -69,19 +69,19 @@ export class get_users_api {
   }
 
   async mountTimers() {
-    //appendnew_flow_get_users_api_TimerStart
+    //appendnew_flow_filter_user_by_teamId_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: get_users_api');
-    //appendnew_flow_get_users_api_MiddlewareStart
+    log.debug('mounting all middlewares for service :: filter_user_by_teamId');
+    //appendnew_flow_filter_user_by_teamId_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: get_users_api');
+    log.debug('mounting all paths for service :: filter_user_by_teamId');
 
     this.app['get'](
-      `${this.serviceBasePath}/users`,
+      `${this.serviceBasePath}/team-users`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
@@ -99,10 +99,10 @@ export class get_users_api {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_vFWI6XXyDZDeNoTU(bh, parentSpanInst);
-          //appendnew_next_sd_FYx965UNpDDGIlBN
+          bh = await this.sd_aJh3XQrnvrMRVP3a(bh, parentSpanInst);
+          //appendnew_next_sd_JEcIiDQndCYNDkpu
         } catch (e) {
-          return await this.errorHandler(bh, e, 'sd_FYx965UNpDDGIlBN');
+          return await this.errorHandler(bh, e, 'sd_JEcIiDQndCYNDkpu');
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
@@ -111,122 +111,99 @@ export class get_users_api {
         this.generatedMiddlewares
       )
     );
-    //appendnew_flow_get_users_api_HttpIn
+    //appendnew_flow_filter_user_by_teamId_HttpIn
   }
-  //   service flows_get_users_api
+  //   service flows_filter_user_by_teamId
 
-  //appendnew_flow_get_users_api_start
+  //appendnew_flow_filter_user_by_teamId_start
 
-  async sd_vFWI6XXyDZDeNoTU(bh, parentSpanInst) {
+  async sd_aJh3XQrnvrMRVP3a(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_vFWI6XXyDZDeNoTU',
+      'sd_aJh3XQrnvrMRVP3a',
       parentSpanInst
     );
     try {
-      console.log('111111111111');
-      console.log(bh.input, 'querrrr');
+      console.log(bh.input.query, 'gotteamid');
+      bh.local.team = {
+        team_id: parseInt(bh.input.query.team_id),
+      };
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_UNNk2I8v7FlpBlKb(bh, parentSpanInst);
-      //appendnew_next_sd_vFWI6XXyDZDeNoTU
+      bh = await this.sd_i8BSf8TCfKA4B0tY(bh, parentSpanInst);
+      //appendnew_next_sd_aJh3XQrnvrMRVP3a
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_vFWI6XXyDZDeNoTU',
+        'sd_aJh3XQrnvrMRVP3a',
         spanInst,
-        'sd_vFWI6XXyDZDeNoTU'
+        'sd_aJh3XQrnvrMRVP3a'
       );
     }
   }
 
-  async sd_UNNk2I8v7FlpBlKb(bh, parentSpanInst) {
+  async sd_i8BSf8TCfKA4B0tY(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_UNNk2I8v7FlpBlKb',
+      'sd_i8BSf8TCfKA4B0tY',
       parentSpanInst
     );
     try {
       const dmUtilsInst = new DmUtils('sd_EQ0uxl70E3kjCZ8g');
-      bh.local.response = await dmUtilsInst.find(
+      bh.local.result = await dmUtilsInst.find(
         '_EN_ihm2p9b723',
-        {},
+        bh.local.team,
         undefined,
         undefined,
         undefined
       );
 
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_lqmIV8xcsaoRklMB(bh, parentSpanInst);
-      //appendnew_next_sd_UNNk2I8v7FlpBlKb
+      bh = await this.sd_xhfvthTDNx3hk1b3(bh, parentSpanInst);
+      //appendnew_next_sd_i8BSf8TCfKA4B0tY
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_UNNk2I8v7FlpBlKb',
+        'sd_i8BSf8TCfKA4B0tY',
         spanInst,
-        'sd_UNNk2I8v7FlpBlKb'
+        'sd_i8BSf8TCfKA4B0tY'
       );
     }
   }
 
-  async sd_lqmIV8xcsaoRklMB(bh, parentSpanInst) {
+  async sd_xhfvthTDNx3hk1b3(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_lqmIV8xcsaoRklMB',
+      'sd_xhfvthTDNx3hk1b3',
       parentSpanInst
     );
     try {
       bh.local.response = {
         statusCode: 200,
-        response: bh.local?.response,
+        response: bh.local.result,
       };
       this.tracerService.sendData(spanInst, bh);
-      await this.sd_CpN3JAOKlNjiCU0L(bh, parentSpanInst);
-      //appendnew_next_sd_lqmIV8xcsaoRklMB
+      await this.sd_oNzXehE5dkrus7w3(bh, parentSpanInst);
+      //appendnew_next_sd_xhfvthTDNx3hk1b3
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_lqmIV8xcsaoRklMB',
+        'sd_xhfvthTDNx3hk1b3',
         spanInst,
-        'sd_lqmIV8xcsaoRklMB'
+        'sd_xhfvthTDNx3hk1b3'
       );
     }
   }
 
-  async sd_CpN3JAOKlNjiCU0L(bh, parentSpanInst) {
+  async sd_oNzXehE5dkrus7w3(bh, parentSpanInst) {
     try {
       bh.web.res.status(bh.local.response.statusCode).send(bh.local.response);
 
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_CpN3JAOKlNjiCU0L');
-    }
-  }
-
-  async sd_0wGpGmwSTEn8lfNg(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_0wGpGmwSTEn8lfNg',
-      parentSpanInst
-    );
-    try {
-      bh.local.response = {
-        statusCode: 400,
-        message: bh.errors?.message,
-      };
-      this.tracerService.sendData(spanInst, bh);
-      await this.sd_CpN3JAOKlNjiCU0L(bh, parentSpanInst);
-      //appendnew_next_sd_0wGpGmwSTEn8lfNg
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_0wGpGmwSTEn8lfNg',
-        spanInst,
-        'sd_0wGpGmwSTEn8lfNg'
-      );
+      return await this.errorHandler(bh, e, 'sd_oNzXehE5dkrus7w3');
     }
   }
 
@@ -245,28 +222,11 @@ export class get_users_api {
     bh.errorSource = src;
     bh.errorFunName = functionName;
     this.tracerService.sendData(parentSpanInst, bh, true);
-    if (
-      false ||
-      (await this.sd_78II90eiHNrVWWDl(bh, parentSpanInst))
-      /*appendnew_next_Catch*/
-    ) {
-      return bh;
+    if (bh.web.next) {
+      bh.web.next(e);
     } else {
-      if (bh.web.next) {
-        bh.web.next(e);
-      } else {
-        throw e;
-      }
+      throw e;
     }
   }
-  async sd_78II90eiHNrVWWDl(bh, parentSpanInst) {
-    const catchConnectedNodes = ['sd_0wGpGmwSTEn8lfNg', 'sd_CpN3JAOKlNjiCU0L'];
-    if (catchConnectedNodes.includes(bh.errorSource)) {
-      return false;
-    }
-    bh = await this.sd_0wGpGmwSTEn8lfNg(bh, parentSpanInst);
-    //appendnew_next_sd_78II90eiHNrVWWDl
-    return true;
-  }
-  //appendnew_flow_get_users_api_Catch
+  //appendnew_flow_filter_user_by_teamId_Catch
 }

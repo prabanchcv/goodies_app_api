@@ -112,7 +112,7 @@
         "team_id": {
             "name": "team_id",
             "format": "",
-            "type": "teams",
+            "type": "number",
             "description": "",
             "default": "",
             "__n__metadata__": {
@@ -123,22 +123,7 @@
                 "primary": false,
                 "placeholder": "",
                 "dbColName": "",
-                "constraints": {},
-                "relation": {
-                    "type": "o2o",
-                    "targetEntity": "teams",
-                    "joinColumnReferencedColumnName": "id",
-                    "joinColumnName": "team_id",
-                    "onUpdate": "CASCADE",
-                    "onDelete": "CASCADE",
-                    "relationId": "",
-                    "inverseSide": "id",
-                    "cascade": true,
-                    "userDrawn": true,
-                    "eager": true,
-                    "jsType": "number",
-                    "required": true
-                }
+                "constraints": {}
             }
         }
     },
@@ -166,6 +151,9 @@
         ],
         "SSD_SERVICE_ID_sd_pPtLqdZddNSuNrMG": [
             "sd_Oh51bSuHLu6pKQYP"
+        ],
+        "SSD_SERVICE_ID_sd_8vomZ2l3BxzLzXyl": [
+            "sd_i8BSf8TCfKA4B0tY"
         ]
     }
 }

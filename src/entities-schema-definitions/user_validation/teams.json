@@ -17,10 +17,23 @@
                 "subCategoryType": null,
                 "nullable": false
             }
+        },
+        "email": {
+            "name": "email",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_g5qijx3rfc",
+                "subCategoryType": null,
+                "nullable": false
+            }
         }
     },
     "required": [
-        "name"
+        "name",
+        "email"
     ],
     "value": "",
     "__attributeExpansion__": true,

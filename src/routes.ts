@@ -1,4 +1,6 @@
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-filter_user_by_teamId-SSD_SERVICE_ID_sd_8vomZ2l3BxzLzXyl
+import { filter_user_by_teamId as SSD_SERVICE_ID_sd_8vomZ2l3BxzLzXyl } from './sd-services/get_users/filter_user_by_teamId';
 //CORE_REFERENCE_IMPORT-add_team_service-SSD_SERVICE_ID_sd_uR32r7vvGH0HEaxs
 import { add_team_service as SSD_SERVICE_ID_sd_uR32r7vvGH0HEaxs } from './sd-services/add_team/add_team_service';
 //CORE_REFERENCE_IMPORT-add_team_api-SSD_SERVICE_ID_sd_Na84Q8oL14BLH7ce
@@ -26,6 +28,8 @@ import { user_registration_api as SSD_SERVICE_ID_sd_71EcxVPTkPTzMzQG } from './s
 
 export const UserRoutes = [
 //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY
+//CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-filter_user_by_teamId-SSD_SERVICE_ID_sd_8vomZ2l3BxzLzXyl
+SSD_SERVICE_ID_sd_8vomZ2l3BxzLzXyl,
 //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-add_team_service-SSD_SERVICE_ID_sd_uR32r7vvGH0HEaxs
 SSD_SERVICE_ID_sd_uR32r7vvGH0HEaxs,
 //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-add_team_api-SSD_SERVICE_ID_sd_Na84Q8oL14BLH7ce

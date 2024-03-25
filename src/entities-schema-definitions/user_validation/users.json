@@ -41,12 +41,26 @@
                 "subCategoryType": null,
                 "nullable": false
             }
+        },
+        "team_id": {
+            "name": "team_id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_0f80x5hn4q",
+                "subCategoryType": null,
+                "nullable": false,
+                "constraints": {}
+            }
         }
     },
     "required": [
         "name",
         "email",
-        "phone_no"
+        "phone_no",
+        "team_id"
     ],
     "value": "",
     "__attributeExpansion__": true,

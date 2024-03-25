@@ -177,7 +177,7 @@ export class add_team_api {
       );
 
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_et5yvVC1FD9RSeIT(bh, parentSpanInst);
+      bh = await this.sd_mwqslfkZan10gfWb(bh, parentSpanInst);
       //appendnew_next_sd_jbCH5aApYFzIGHvh
       return bh;
     } catch (e) {
@@ -187,6 +187,58 @@ export class add_team_api {
         'sd_jbCH5aApYFzIGHvh',
         spanInst,
         'sd_jbCH5aApYFzIGHvh'
+      );
+    }
+  }
+
+  async sd_mwqslfkZan10gfWb(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_mwqslfkZan10gfWb',
+      parentSpanInst
+    );
+    try {
+      if (bh.local.result.length > 0) {
+        throw new Error('User Already Registered');
+      }
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_GFuPLAMJGARTfF1M(bh, parentSpanInst);
+      //appendnew_next_sd_mwqslfkZan10gfWb
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_mwqslfkZan10gfWb',
+        spanInst,
+        'sd_mwqslfkZan10gfWb'
+      );
+    }
+  }
+
+  async sd_GFuPLAMJGARTfF1M(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_GFuPLAMJGARTfF1M',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_uR32r7vvGH0HEaxsInstance: SSD_SERVICE_ID_sd_uR32r7vvGH0HEaxs.add_team_service =
+        SSD_SERVICE_ID_sd_uR32r7vvGH0HEaxs.add_team_service.getInstance();
+      bh = await SSD_SERVICE_ID_sd_uR32r7vvGH0HEaxsInstance.insertTeam(
+        spanInst,
+        bh
+      );
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_et5yvVC1FD9RSeIT(bh, parentSpanInst);
+      //appendnew_next_sd_GFuPLAMJGARTfF1M
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_GFuPLAMJGARTfF1M',
+        spanInst,
+        'sd_GFuPLAMJGARTfF1M'
       );
     }
   }
@@ -226,38 +278,29 @@ export class add_team_api {
     }
   }
 
-  async sd_jMuZaI0it2odaICr(bh, parentSpanInst) {
+  async sd_xh9PcwJ6vaZOU81B(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_jMuZaI0it2odaICr',
+      'sd_xh9PcwJ6vaZOU81B',
       parentSpanInst
     );
     try {
       bh.local.response = {
         statusCode: 400,
-        error: bh.error.toString(),
+        error: bh.error?.message,
       };
+
       this.tracerService.sendData(spanInst, bh);
-      await this.sd_aK0AEAbMP2T6noUD(bh, parentSpanInst);
-      //appendnew_next_sd_jMuZaI0it2odaICr
+      await this.sd_wqnmAh9VMvicdUGW(bh, parentSpanInst);
+      //appendnew_next_sd_xh9PcwJ6vaZOU81B
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_jMuZaI0it2odaICr',
+        'sd_xh9PcwJ6vaZOU81B',
         spanInst,
-        'sd_jMuZaI0it2odaICr'
+        'sd_xh9PcwJ6vaZOU81B'
       );
-    }
-  }
-
-  async sd_aK0AEAbMP2T6noUD(bh, parentSpanInst) {
-    try {
-      bh.web.res.status(bh.local.response.statusCode).send(bh.local.response);
-
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_aK0AEAbMP2T6noUD');
     }
   }
 
@@ -278,7 +321,7 @@ export class add_team_api {
     this.tracerService.sendData(parentSpanInst, bh, true);
     if (
       false ||
-      (await this.sd_M4PfLRGwxFWCmwN7(bh, parentSpanInst))
+      (await this.sd_LdI5xYAsN0GeOV1G(bh, parentSpanInst))
       /*appendnew_next_Catch*/
     ) {
       return bh;
@@ -290,14 +333,14 @@ export class add_team_api {
       }
     }
   }
-  async sd_M4PfLRGwxFWCmwN7(bh, parentSpanInst) {
-    const nodes = ['sd_jbCH5aApYFzIGHvh', 'sd_zleEPqEYG5xv2y8b'];
-    if (nodes.includes(bh.errorSource)) {
-      bh = await this.sd_jMuZaI0it2odaICr(bh, parentSpanInst);
-      //appendnew_next_sd_M4PfLRGwxFWCmwN7
-      return true;
+  async sd_LdI5xYAsN0GeOV1G(bh, parentSpanInst) {
+    const catchConnectedNodes = ['sd_xh9PcwJ6vaZOU81B', 'sd_wqnmAh9VMvicdUGW'];
+    if (catchConnectedNodes.includes(bh.errorSource)) {
+      return false;
     }
-    return false;
+    bh = await this.sd_xh9PcwJ6vaZOU81B(bh, parentSpanInst);
+    //appendnew_next_sd_LdI5xYAsN0GeOV1G
+    return true;
   }
   //appendnew_flow_add_team_api_Catch
 }

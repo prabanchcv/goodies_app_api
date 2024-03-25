@@ -100,6 +100,28 @@ export class add_team_service {
       );
     }
   }
+
+  async insertTeam(parentSpanInst, bh) {
+    const spanInst = this.tracerService.createSpan(
+      'insertTeam',
+      parentSpanInst
+    );
+
+    try {
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_VKqt9zvqDvg7hlTd(bh, parentSpanInst);
+      //appendnew_next_insertTeam
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_VCBfRPl6BFtM8u3d',
+        spanInst,
+        'insertTeam'
+      );
+    }
+  }
   //appendnew_flow_add_team_service_start
 
   async sd_VCQ7WYqadpPVEtrm(bh, parentSpanInst) {
@@ -108,9 +130,13 @@ export class add_team_service {
       parentSpanInst
     );
     try {
-      console.log(bh.input.body, 'bodd');
+      console.log(bh.input.body, 'boddfind');
+      bh.local.findEmail = [
+        { email: bh.input?.body?.email },
+        { name: bh.input?.body?.name },
+      ];
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_LSW9lhjjZNXaNp0t(bh, parentSpanInst);
+      bh = await this.sd_aQCBbAmOO2sfbGpK(bh, parentSpanInst);
       //appendnew_next_sd_VCQ7WYqadpPVEtrm
       return bh;
     } catch (e) {
@@ -120,6 +146,80 @@ export class add_team_service {
         'sd_VCQ7WYqadpPVEtrm',
         spanInst,
         'sd_VCQ7WYqadpPVEtrm'
+      );
+    }
+  }
+
+  async sd_aQCBbAmOO2sfbGpK(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_aQCBbAmOO2sfbGpK',
+      parentSpanInst
+    );
+    try {
+      const dmUtilsInst = new DmUtils('sd_EQ0uxl70E3kjCZ8g');
+      bh.local.result = await dmUtilsInst.find(
+        '_EN_373fkobibm',
+        bh.local.findEmail,
+        undefined,
+        undefined,
+        undefined
+      );
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_WlSvbxnAkOOgkdhK(bh, parentSpanInst);
+      //appendnew_next_sd_aQCBbAmOO2sfbGpK
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_aQCBbAmOO2sfbGpK',
+        spanInst,
+        'sd_aQCBbAmOO2sfbGpK'
+      );
+    }
+  }
+
+  async sd_WlSvbxnAkOOgkdhK(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_WlSvbxnAkOOgkdhK',
+      parentSpanInst
+    );
+    try {
+      console.log(bh.local.result, '123');
+
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_WlSvbxnAkOOgkdhK
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_WlSvbxnAkOOgkdhK',
+        spanInst,
+        'sd_WlSvbxnAkOOgkdhK'
+      );
+    }
+  }
+
+  async sd_VKqt9zvqDvg7hlTd(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_VKqt9zvqDvg7hlTd',
+      parentSpanInst
+    );
+    try {
+      console.log(bh.input.body, 'bodd');
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_LSW9lhjjZNXaNp0t(bh, parentSpanInst);
+      //appendnew_next_sd_VKqt9zvqDvg7hlTd
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_VKqt9zvqDvg7hlTd',
+        spanInst,
+        'sd_VKqt9zvqDvg7hlTd'
       );
     }
   }

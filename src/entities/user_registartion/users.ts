@@ -1,13 +1,6 @@
 //append_imports_start
 
-import {
-  PrimaryGeneratedColumn,
-  OneToOne,
-  JoinColumn,
-  Entity,
-  Column,
-} from 'typeorm'; //_splitter_
-import { teams } from './teams'; //_splitter_
+import { PrimaryGeneratedColumn, Entity, Column } from 'typeorm'; //_splitter_
 //append_imports_end
 @Entity('users')
 export class users {
@@ -29,13 +22,6 @@ export class users {
   status: boolean;
   @Column({ name: 'image', nullable: false, type: 'text', primary: false })
   image: string;
-  @OneToOne(() => teams, (teams) => teams.id, {
-    cascade: true,
-    eager: true,
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
-    nullable: false,
-  })
-  @JoinColumn({ name: 'team_id', referencedColumnName: 'id' })
-  team_id;
+  @Column({ name: 'team_id', nullable: false, type: 'bigint', primary: false })
+  team_id: number;
 }

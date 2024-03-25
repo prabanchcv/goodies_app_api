@@ -1,0 +1,22 @@
+{
+    "/team-users": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "team_id",
+                    "description": "id of team",
+                    "required": false
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "filter_user_by_teamId"
+            ]
+        }
+    }
+}
