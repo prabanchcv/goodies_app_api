@@ -1,0 +1,22 @@
+{
+    "/teams": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "name",
+                    "description": "team name",
+                    "required": true
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "add_team_api"
+            ]
+        }
+    }
+}

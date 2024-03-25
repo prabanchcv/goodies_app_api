@@ -1,0 +1,34 @@
+{
+    "name": "teams",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_l3xabmnfza",
+    "y": 80,
+    "properties": {
+        "name": {
+            "name": "name",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_qe0jb9fyev",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        }
+    },
+    "required": [
+        "name"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 612,
+    "userList": {
+        "SSD_SERVICE_ID_sd_Na84Q8oL14BLH7ce": [
+            "sd_zleEPqEYG5xv2y8b"
+        ]
+    }
+}

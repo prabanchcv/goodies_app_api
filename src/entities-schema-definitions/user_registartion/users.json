@@ -1,0 +1,171 @@
+{
+    "name": "users",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_ihm2p9b723",
+    "y": 10,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_illvmq19jy",
+                "nullable": false,
+                "dbType": "bigint",
+                "primary": true,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {
+                    "primaryGenerated": true
+                }
+            }
+        },
+        "name": {
+            "name": "name",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_ykg5u3nnwo",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "email": {
+            "name": "email",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_ha0l0zruk3",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "phone_no": {
+            "name": "phone_no",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_h967rzwpa9",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "status": {
+            "name": "status",
+            "format": "",
+            "type": "boolean",
+            "description": "",
+            "default": false,
+            "__n__metadata__": {
+                "id": "_Att_5wa8kiwxpd",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "boolean",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "image": {
+            "name": "image",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_8627yd814z",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "team_id": {
+            "name": "team_id",
+            "format": "",
+            "type": "teams",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_cdlxllg9my",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "bigint",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {},
+                "relation": {
+                    "type": "o2o",
+                    "targetEntity": "teams",
+                    "joinColumnReferencedColumnName": "id",
+                    "joinColumnName": "team_id",
+                    "onUpdate": "CASCADE",
+                    "onDelete": "CASCADE",
+                    "relationId": "",
+                    "inverseSide": "id",
+                    "cascade": true,
+                    "userDrawn": true,
+                    "eager": true,
+                    "jsType": "number",
+                    "required": true
+                }
+            }
+        }
+    },
+    "required": [
+        "name",
+        "email",
+        "phone_no",
+        "status",
+        "team_id"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 20,
+    "__n__metadata__": {},
+    "userList": {
+        "SSD_SERVICE_ID_sd_JoNOAtsI08gNdk19": [
+            "sd_Cbkb7yrUmLAZgucR"
+        ],
+        "SSD_SERVICE_ID_sd_IGNsOOpSteTbHbtV": [
+            "sd_UNNk2I8v7FlpBlKb"
+        ],
+        "SSD_SERVICE_ID_sd_qBmQ5Y4Dvn7IQdDj": [
+            "sd_kTir02TxqfzL0zPa"
+        ],
+        "SSD_SERVICE_ID_sd_pPtLqdZddNSuNrMG": [
+            "sd_Oh51bSuHLu6pKQYP"
+        ]
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "/user/get": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "id",
+                    "description": "id of user",
+                    "required": true
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "get_user_by_id"
+            ]
+        }
+    }
+}

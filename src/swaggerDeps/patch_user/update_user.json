@@ -1,0 +1,15 @@
+{
+    "/user/put": {
+        "put": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "update_user"
+            ]
+        }
+    }
+}
