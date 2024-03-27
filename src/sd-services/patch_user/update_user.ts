@@ -86,7 +86,7 @@ export class update_user {
       `${this.serviceBasePath}/user/put`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
-        null,
+        'jwt',
         'pre',
         this.generatedMiddlewares
       ),
@@ -113,7 +113,7 @@ export class update_user {
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
-        null,
+        'jwt',
         'post',
         this.generatedMiddlewares
       )

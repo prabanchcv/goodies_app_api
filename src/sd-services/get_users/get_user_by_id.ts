@@ -84,7 +84,7 @@ export class get_user_by_id {
       `${this.serviceBasePath}/user/get`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
-        null,
+        'jwt',
         'pre',
         this.generatedMiddlewares
       ),
@@ -106,7 +106,7 @@ export class get_user_by_id {
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
-        null,
+        'jwt',
         'post',
         this.generatedMiddlewares
       )

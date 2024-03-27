@@ -122,15 +122,19 @@ export class login_api {
       parentSpanInst
     );
     try {
-      console.log(bh.input.body, 'bodyyyy');
-      console.log(process.env);
+      var jwt = require('jsonwebtoken');
       if (
         process.env.LOGIN_ID == bh.input.body.email &&
         process.env.LOGIN_PASS == bh.input.body.password
       ) {
+        var token = jwt.sign({ admin: process.env.LOGIN_ID }, 'shhhhh', {
+          expiresIn: '24h',
+        });
+
         bh.local.response = {
           statusCode: 200,
           message: 'User LoggedIN',
+          token: token,
         };
       } else {
         throw new Error('Invalid Email or Password');
@@ -152,6 +156,10 @@ export class login_api {
 
   async sd_9fIqo4KtCUX1VPZk(bh, parentSpanInst) {
     try {
+      bh.web.res.cookie('jwt_token ', bh.local.response.token, {
+        maxAge: 1000000,
+      });
+
       bh.web.res.status(bh.local.response.statusCode).send(bh.local.response);
 
       return bh;

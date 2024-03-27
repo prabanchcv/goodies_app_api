@@ -84,7 +84,7 @@ export class get_teams_api {
       `${this.serviceBasePath}/teams`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
-        null,
+        'jwt',
         'pre',
         this.generatedMiddlewares
       ),
@@ -106,7 +106,7 @@ export class get_teams_api {
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
-        null,
+        'jwt',
         'post',
         this.generatedMiddlewares
       )

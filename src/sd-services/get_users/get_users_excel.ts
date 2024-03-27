@@ -85,7 +85,7 @@ export class get_users_excel {
       `${this.serviceBasePath}/users/download`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
-        null,
+        'jwt',
         'pre',
         this.generatedMiddlewares
       ),
@@ -107,7 +107,7 @@ export class get_users_excel {
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
-        null,
+        'jwt',
         'post',
         this.generatedMiddlewares
       )

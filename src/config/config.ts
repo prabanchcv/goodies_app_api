@@ -8,6 +8,6 @@ export default {
   middlewares: {
     pre: [{ __ssdGlobalMiddlewares__: 'sd_Tp9jNbUvUZ1kJnAn' }],
     post: [],
-    sequences: {},
+    sequences: { jwt: { pre: [{ jwt_service: 'jwt_validation' }], post: [] } },
   },
 };
