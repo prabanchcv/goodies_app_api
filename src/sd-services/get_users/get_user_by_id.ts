@@ -216,7 +216,7 @@ export class get_user_by_id {
     try {
       bh.local.response = {
         statusCode: 400,
-        message: bh.errors?.message,
+        message: bh.error?.message,
       };
       this.tracerService.sendData(spanInst, bh);
       await this.sd_YrAKHCKmR1iALJLV(bh, parentSpanInst);

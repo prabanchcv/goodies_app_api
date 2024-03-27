@@ -198,7 +198,7 @@ export class add_team_api {
     );
     try {
       if (bh.local.result.length > 0) {
-        throw new Error('User Already Registered');
+        throw new Error('Team Already Registered');
       }
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_GFuPLAMJGARTfF1M(bh, parentSpanInst);
@@ -286,7 +286,7 @@ export class add_team_api {
     try {
       bh.local.response = {
         statusCode: 400,
-        error: bh.error?.message,
+        message: bh.error?.message,
       };
 
       this.tracerService.sendData(spanInst, bh);

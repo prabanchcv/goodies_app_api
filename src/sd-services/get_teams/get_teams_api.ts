@@ -202,6 +202,31 @@ export class get_teams_api {
     }
   }
 
+  async sd_6mgktfvKamkWigHF(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_6mgktfvKamkWigHF',
+      parentSpanInst
+    );
+    try {
+      bh.local.response = {
+        statusCode: 400,
+        error: bh.error?.message,
+      };
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_RPlnrNFrDmUDZCj8(bh, parentSpanInst);
+      //appendnew_next_sd_6mgktfvKamkWigHF
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_6mgktfvKamkWigHF',
+        spanInst,
+        'sd_6mgktfvKamkWigHF'
+      );
+    }
+  }
+
   //appendnew_node
 
   // error_handler_slot
@@ -217,11 +242,28 @@ export class get_teams_api {
     bh.errorSource = src;
     bh.errorFunName = functionName;
     this.tracerService.sendData(parentSpanInst, bh, true);
-    if (bh.web.next) {
-      bh.web.next(e);
+    if (
+      false ||
+      (await this.sd_7fPvMGXG65jcZ91h(bh, parentSpanInst))
+      /*appendnew_next_Catch*/
+    ) {
+      return bh;
     } else {
-      throw e;
+      if (bh.web.next) {
+        bh.web.next(e);
+      } else {
+        throw e;
+      }
     }
+  }
+  async sd_7fPvMGXG65jcZ91h(bh, parentSpanInst) {
+    const catchConnectedNodes = ['sd_6mgktfvKamkWigHF', 'sd_RPlnrNFrDmUDZCj8'];
+    if (catchConnectedNodes.includes(bh.errorSource)) {
+      return false;
+    }
+    bh = await this.sd_6mgktfvKamkWigHF(bh, parentSpanInst);
+    //appendnew_next_sd_7fPvMGXG65jcZ91h
+    return true;
   }
   //appendnew_flow_get_teams_api_Catch
 }

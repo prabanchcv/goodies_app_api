@@ -5,7 +5,14 @@
             "description": "",
             "consumes": [],
             "produces": [],
-            "parameters": [],
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "team_id",
+                    "description": "id of team",
+                    "required": false
+                }
+            ],
             "responses": {},
             "tags": [
                 "get_users_api"

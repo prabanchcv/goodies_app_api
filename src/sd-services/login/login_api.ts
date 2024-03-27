@@ -7,9 +7,8 @@ import * as cookieParser from 'cookie-parser'; //_splitter_
 import { SDBaseService } from '../../services/SDBaseService'; //_splitter_
 import { TracerService } from '../../services/TracerService'; //_splitter_
 import log from '../../utils/Logger'; //_splitter_
-import { DmUtils } from '../../utils/ndefault-datamodel/find/dmUtils'; //_splitter_
 //append_imports_end
-export class get_users_api {
+export class login_api {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -25,7 +24,7 @@ export class get_users_api {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'get_users_api';
+    this.serviceName = 'login_api';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -40,7 +39,7 @@ export class get_users_api {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new get_users_api(
+      instance = new login_api(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -69,19 +68,19 @@ export class get_users_api {
   }
 
   async mountTimers() {
-    //appendnew_flow_get_users_api_TimerStart
+    //appendnew_flow_login_api_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: get_users_api');
-    //appendnew_flow_get_users_api_MiddlewareStart
+    log.debug('mounting all middlewares for service :: login_api');
+    //appendnew_flow_login_api_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: get_users_api');
+    log.debug('mounting all paths for service :: login_api');
 
-    this.app['get'](
-      `${this.serviceBasePath}/users`,
+    this.app['post'](
+      `${this.serviceBasePath}/login`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
@@ -99,10 +98,10 @@ export class get_users_api {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_hrLmeHRW20yZab5M(bh, parentSpanInst);
-          //appendnew_next_sd_UsrIeL9gkEhOCoa6
+          bh = await this.sd_QUriXObcFWungx9g(bh, parentSpanInst);
+          //appendnew_next_sd_qA2FxVA138HnRzpt
         } catch (e) {
-          return await this.errorHandler(bh, e, 'sd_UsrIeL9gkEhOCoa6');
+          return await this.errorHandler(bh, e, 'sd_qA2FxVA138HnRzpt');
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
@@ -111,123 +110,77 @@ export class get_users_api {
         this.generatedMiddlewares
       )
     );
-    //appendnew_flow_get_users_api_HttpIn
+    //appendnew_flow_login_api_HttpIn
   }
-  //   service flows_get_users_api
+  //   service flows_login_api
 
-  //appendnew_flow_get_users_api_start
+  //appendnew_flow_login_api_start
 
-  async sd_hrLmeHRW20yZab5M(bh, parentSpanInst) {
+  async sd_QUriXObcFWungx9g(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_hrLmeHRW20yZab5M',
+      'sd_QUriXObcFWungx9g',
       parentSpanInst
     );
     try {
-      console.log(bh.input.query, 'gotteamid');
-      bh.local.team = {
-        team_id: parseInt(bh.input.query.team_id),
-      };
+      console.log(bh.input.body, 'bodyyyy');
+      console.log(process.env);
+      if (
+        process.env.LOGIN_ID == bh.input.body.email &&
+        process.env.LOGIN_PASS == bh.input.body.password
+      ) {
+        bh.local.response = {
+          statusCode: 200,
+          message: 'User LoggedIN',
+        };
+      } else {
+        throw new Error('Invalid Email or Password');
+      }
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_fE8rH8kJ1IBlKYvC(bh, parentSpanInst);
-      //appendnew_next_sd_hrLmeHRW20yZab5M
+      await this.sd_9fIqo4KtCUX1VPZk(bh, parentSpanInst);
+      //appendnew_next_sd_QUriXObcFWungx9g
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_hrLmeHRW20yZab5M',
+        'sd_QUriXObcFWungx9g',
         spanInst,
-        'sd_hrLmeHRW20yZab5M'
+        'sd_QUriXObcFWungx9g'
       );
     }
   }
 
-  async sd_fE8rH8kJ1IBlKYvC(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_fE8rH8kJ1IBlKYvC',
-      parentSpanInst
-    );
-    try {
-      const dmUtilsInst = new DmUtils('sd_EQ0uxl70E3kjCZ8g');
-      bh.local.result = await dmUtilsInst.find(
-        '_EN_ihm2p9b723',
-        bh.local.team,
-        undefined,
-        undefined,
-        undefined
-      );
-
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_oYfU929AZdMhkAsi(bh, parentSpanInst);
-      //appendnew_next_sd_fE8rH8kJ1IBlKYvC
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_fE8rH8kJ1IBlKYvC',
-        spanInst,
-        'sd_fE8rH8kJ1IBlKYvC'
-      );
-    }
-  }
-
-  async sd_oYfU929AZdMhkAsi(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_oYfU929AZdMhkAsi',
-      parentSpanInst
-    );
-    try {
-      bh.local.response = {
-        statusCode: 200,
-        response: bh.local.result,
-      };
-      this.tracerService.sendData(spanInst, bh);
-      await this.sd_SgRmDrSWKaADm4WW(bh, parentSpanInst);
-      //appendnew_next_sd_oYfU929AZdMhkAsi
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_oYfU929AZdMhkAsi',
-        spanInst,
-        'sd_oYfU929AZdMhkAsi'
-      );
-    }
-  }
-
-  async sd_SgRmDrSWKaADm4WW(bh, parentSpanInst) {
+  async sd_9fIqo4KtCUX1VPZk(bh, parentSpanInst) {
     try {
       bh.web.res.status(bh.local.response.statusCode).send(bh.local.response);
 
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_SgRmDrSWKaADm4WW');
+      return await this.errorHandler(bh, e, 'sd_9fIqo4KtCUX1VPZk');
     }
   }
 
-  async sd_Gk0ajy3Y8KNCYzvu(bh, parentSpanInst) {
+  async sd_n2OOYEGTXDrtR4XJ(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_Gk0ajy3Y8KNCYzvu',
+      'sd_n2OOYEGTXDrtR4XJ',
       parentSpanInst
     );
     try {
       bh.local.response = {
         statusCode: 400,
-        error: bh.errors?.message,
+        message: bh.error?.message,
       };
       this.tracerService.sendData(spanInst, bh);
-      await this.sd_SgRmDrSWKaADm4WW(bh, parentSpanInst);
-      //appendnew_next_sd_Gk0ajy3Y8KNCYzvu
+      await this.sd_9fIqo4KtCUX1VPZk(bh, parentSpanInst);
+      //appendnew_next_sd_n2OOYEGTXDrtR4XJ
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_Gk0ajy3Y8KNCYzvu',
+        'sd_n2OOYEGTXDrtR4XJ',
         spanInst,
-        'sd_Gk0ajy3Y8KNCYzvu'
+        'sd_n2OOYEGTXDrtR4XJ'
       );
     }
   }
@@ -249,7 +202,7 @@ export class get_users_api {
     this.tracerService.sendData(parentSpanInst, bh, true);
     if (
       false ||
-      (await this.sd_T8l4l68lgdNo7GaX(bh, parentSpanInst))
+      (await this.sd_yKq0Cg5oSAciEN6t(bh, parentSpanInst))
       /*appendnew_next_Catch*/
     ) {
       return bh;
@@ -261,14 +214,14 @@ export class get_users_api {
       }
     }
   }
-  async sd_T8l4l68lgdNo7GaX(bh, parentSpanInst) {
-    const catchConnectedNodes = ['sd_Gk0ajy3Y8KNCYzvu', 'sd_SgRmDrSWKaADm4WW'];
+  async sd_yKq0Cg5oSAciEN6t(bh, parentSpanInst) {
+    const catchConnectedNodes = ['sd_n2OOYEGTXDrtR4XJ', 'sd_9fIqo4KtCUX1VPZk'];
     if (catchConnectedNodes.includes(bh.errorSource)) {
       return false;
     }
-    bh = await this.sd_Gk0ajy3Y8KNCYzvu(bh, parentSpanInst);
-    //appendnew_next_sd_T8l4l68lgdNo7GaX
+    bh = await this.sd_n2OOYEGTXDrtR4XJ(bh, parentSpanInst);
+    //appendnew_next_sd_yKq0Cg5oSAciEN6t
     return true;
   }
-  //appendnew_flow_get_users_api_Catch
+  //appendnew_flow_login_api_Catch
 }
